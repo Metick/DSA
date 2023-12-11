@@ -1,5 +1,5 @@
 
-//O(N), a linear increase in time based on time taken.
+//O(N), a linear increase in time based on N
 //Making use of a vector to be able to use .size()
 #include <vector>
 #include <iostream>
