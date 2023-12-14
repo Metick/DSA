@@ -3,7 +3,9 @@
 #include <iostream>
 #include <math.h>
 
-
+//Walk the array by square root of N till we find true.
+//when true is found walk from previous false value till we find a true value so the second crystal ball "breaks"
+//if found return index
 int two_crystal_balls(std::vector<bool> arr)
 {
 	const size_t jump_amount = std::floor(std::sqrt(arr.size()));
@@ -11,11 +13,15 @@ int two_crystal_balls(std::vector<bool> arr)
 	for (size_t i = 0; i < arr.size(); i += jump_amount)
 	{
 		if (arr[i])
-			for (size_t ii = previous_index; ii < i && ii < arr.size(); ii++)
-				if (arr[ii])
-					return (ii);
+            break;
 		previous_index = i;
 	}
+
+	for (size_t i = previous_index; i < (previous_index + jump_amount) && i < arr.size(); i++)
+    {
+		if (arr[i])
+			return i;
+    }
     return -1;
 }
 
