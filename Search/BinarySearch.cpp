@@ -29,7 +29,7 @@ bool binary_search(std::vector<int> arr, int value)
     return false;
 }
 
-int main()
+int main(void)
 {
     std::vector<int> sorted_list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
     std::cout << "Results: " << binary_search(sorted_list, 9) << std::endl;
